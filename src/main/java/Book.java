@@ -3,13 +3,13 @@ public class Book {
     private final String title;
     private final int creationYear;
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "author='" + author + '\'' +
-                ", title='" + title + '\'' +
-                ", creationYear=" + creationYear +
-                '}';
+    public Book(String author, String title, int creationYear) {
+        if (author == null || title == null || creationYear == 0) {
+            throw new IllegalArgumentException("Illegal argument received");
+        }
+        this.author = author;
+        this.title = title;
+        this.creationYear = creationYear;
     }
 
     public String getAuthor() {
@@ -24,9 +24,12 @@ public class Book {
         return creationYear;
     }
 
-    public Book(String author, String title, int creationYear) {
-        this.author = author;
-        this.title = title;
-        this.creationYear = creationYear;
+    @Override
+    public String toString() {
+        return "Book{" +
+                "author='" + author + '\'' +
+                ", title='" + title + '\'' +
+                ", creationYear=" + creationYear +
+                '}';
     }
 }

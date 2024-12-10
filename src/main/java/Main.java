@@ -6,7 +6,7 @@ public class Main {
     private final static Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        DAO bookDAO = new BookDAO();
+        BookDAO bookDAO = new BookDAOInMemory();
         UserInteraction userInteraction = new UserInteraction();
 
         bookDAO.add(new Book("Bruce Eckel", "Thinking in Java", 1998));

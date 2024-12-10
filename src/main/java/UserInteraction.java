@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class UserInteraction {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
     private final Scanner scanner = new Scanner(System.in);
-    private final DAO bookDAO = new BookDAO();
+    private final BookDAO bookDAO = new BookDAOInMemory();
 
     public void addByUser() {
         String title = inputString("Enter book title");
@@ -34,24 +34,20 @@ public class UserInteraction {
     public void findByUser() {
         LOGGER.info("Enter finding tag (1. Title; 2. Author; 3. Creation year)");
         int choice = inputInt("Choose option 1 - 3");
-        BookFieldType tag = null;
         List<Book> findResultBooks = null;
 
         switch (choice) {
             case 1 -> {
-                tag = BookFieldType.TITLE;
                 String title = inputString("Enter title: ");
-                findResultBooks = bookDAO.findByTag(tag, title);
+                findResultBooks = bookDAO.findByTag(BookFieldType.TITLE, title);
             }
             case 2 -> {
-                tag = BookFieldType.AUTHOR;
                 String author = inputString("Enter author: ");
-                findResultBooks = bookDAO.findByTag(tag, author);
+                findResultBooks = bookDAO.findByTag(BookFieldType.AUTHOR, author);
             }
             case 3 -> {
-                tag = BookFieldType.CREATION_YEAR;
                 int creationYear = inputInt("Enter creation year: ");
-                findResultBooks = bookDAO.findByTag(tag, creationYear);
+                findResultBooks = bookDAO.findByTag(BookFieldType.CREATION_YEAR, creationYear);
             }
             default -> {
                 LOGGER.info("Incorrect value, choose option 1 - 3");

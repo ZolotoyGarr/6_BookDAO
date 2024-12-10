@@ -1,7 +1,6 @@
-import java.util.List;
+import java.util.Comparator;
 
 public class TitleSpecification extends AbstractSpecification<String> {
-    BookFieldType bookFieldType = BookFieldType.TITLE;
 
     @Override
     public boolean match(Book book, String title) {
@@ -9,8 +8,7 @@ public class TitleSpecification extends AbstractSpecification<String> {
     }
 
     @Override
-    public void sort(List<Book> books) {
-        setComparator(bookFieldType);
-        books.sort(getComparator());
+    public Comparator<Book> getComparator() {
+        return Comparator.comparing(Book::getTitle);
     }
 }
