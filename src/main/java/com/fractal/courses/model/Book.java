@@ -1,3 +1,5 @@
+package com.fractal.courses.model;
+
 public class Book {
     private final String author;
     private final String title;
@@ -26,7 +28,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "com.fractal.courses.model.Book{" +
                 "author='" + author + '\'' +
                 ", title='" + title + '\'' +
                 ", creationYear=" + creationYear +

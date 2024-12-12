@@ -1,3 +1,12 @@
+package com.fractal.courses.DAO.impl;
+
+import com.fractal.courses.*;
+import com.fractal.courses.exceptions.DaoException;
+import com.fractal.courses.exceptions.UnknownFieldException;
+import com.fractal.courses.model.Book;
+import com.fractal.courses.model.BookFieldType;
+import com.fractal.courses.specification.Specification;
+import com.fractal.courses.specification.impl.SpecificationFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -19,7 +28,7 @@ public class BookDAOInMemory implements BookDAO {
         if (fieldType == null) {
             throw new UnknownFieldException("Unknown field type received");
         }
-        Specification<T> currentSpec = specificationFactory.create(fieldType);//Unchecked assignment: 'Specification' to 'Specification<T>'
+        Specification<T> currentSpec = specificationFactory.create(fieldType);//Unchecked assignment: 'com.fractal.courses.specification.Specification' to 'com.fractal.courses.specification.Specification<T>'
         List<Book> findResultBooks = currentSpec.find(bookList, value);
         if (findResultBooks.isEmpty()) {
             LOGGER.info("There is no books with this tag: " + value);
@@ -68,7 +77,7 @@ public class BookDAOInMemory implements BookDAO {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("BookDAO{");
+        sb.append("com.fractal.courses.DAO.impl.BookDAO{");
         sb.append("bookList=[");
         for (Book book : bookList) {
             sb.append(book.toString()).append(", ");

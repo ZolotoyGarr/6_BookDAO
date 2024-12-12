@@ -1,3 +1,5 @@
+package com.fractal.courses.specification.impl;
+
 import java.util.Comparator;
 
 public class TitleSpecification extends AbstractSpecification<String> {

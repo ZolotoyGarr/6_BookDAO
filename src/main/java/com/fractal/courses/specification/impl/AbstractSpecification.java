@@ -1,3 +1,8 @@
+package com.fractal.courses.specification.impl;
+
+import com.fractal.courses.model.Book;
+import com.fractal.courses.specification.Specification;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;

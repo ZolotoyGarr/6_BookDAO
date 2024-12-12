@@ -1,3 +1,8 @@
+package com.fractal.courses.specification;
+
+import com.fractal.courses.model.Book;
+import com.fractal.courses.exceptions.DaoException;
+
 import java.util.List;
 
 public interface Specification<T> {

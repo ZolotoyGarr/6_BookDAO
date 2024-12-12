@@ -1,3 +1,9 @@
+package com.fractal.courses;
+
+import com.fractal.courses.DAO.impl.BookDAO;
+import com.fractal.courses.DAO.impl.BookDAOInMemory;
+import com.fractal.courses.model.Book;
+import com.fractal.courses.model.UserInteraction;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 

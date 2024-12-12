@@ -1,3 +1,8 @@
+package com.fractal.courses.model;
+
+import com.fractal.courses.DAO.impl.BookDAO;
+import com.fractal.courses.DAO.impl.BookDAOInMemory;
+import com.fractal.courses.Main;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -15,7 +20,7 @@ public class UserInteraction {
         int creationYear = inputInt("Enter creation year");
 
         bookDAO.add(new Book(title, author, creationYear));
-        LOGGER.info("Book \"" + title + "\" was successfully added");
+        LOGGER.info("com.fractal.courses.model.Book \"" + title + "\" was successfully added");
     }
 
     public void removeByUser() {
