@@ -7,7 +7,7 @@ import com.fractal.courses.exceptions.UnknownFieldException;
 
 import java.util.List;
 
-public interface DAO {
+public interface BookDAO {
     void add(Book book) throws DaoException;
     void add(List<Book> books) throws DaoException;
     void remove(Book book) throws DaoException;
